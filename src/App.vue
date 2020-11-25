@@ -1,15 +1,18 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+		<ToDoList msg="Good Day Brian!"/>
+		<Time msg="The current time is "/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ToDoList from './components/ToDoList.vue'
+import Time from './components/Time.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+	ToDoList,
+	Time,
   }
 }
 </script>
