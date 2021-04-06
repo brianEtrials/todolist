@@ -1,24 +1,50 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-   
   </div>
+
+  <form>
+	<label>TODO</label>
+	<input v-model="newTodo" type="text"/>
+	<!-- remember v-model is like value and input -->
+	<button @click="addTodo" type="button">Add</button>
+  </form>
+  <ul>
+	<li v-for="(item, index) in todos" :key="index">
+		{{item}}
+		<button @click="deleteTodo(index)">delete</button>
+	</li>
+  </ul>
 </template>
 
 <script>
 export default {
-  name: 'ToDoList',
-  props: {
-    msg: String
-  }
+	props:{
+		msg: String,
+	},
+	data: function(){
+		return{
+			newTodo: '',
+			todos: [],
+		}
+	},
+	methods: {
+		addTodo(){
+			console.log('clicked add');
+			if(this.newTodo.length === 0) {
+				console.log('Enter something')
+			}
+			else {
+				this.todos.push(this.newTodo);
+			}
+		},
+		deleteTodo(item){
+			this.todos.splice(item, 1);
+		}
+	}
 }
 </script>
-<!-- List of things to do!
-// 1: Make it so the Title says Hi Brian! The time is ----- and time is displayed
-// 2: Make a to-do-list allowing you to have up to 4 tasks
-// 	- Allow tasks to be added
-// 	- Allow task to be removed -->
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 h3 {
   margin: 40px 0 0;
@@ -28,7 +54,7 @@ ul {
   padding: 0;
 }
 li {
-  display: inline-block;
+  display: block;
   margin: 0 10px;
 }
 a {

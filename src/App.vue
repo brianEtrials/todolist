@@ -1,18 +1,17 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-		<ToDoList msg="Good Day Brian!"/>
-		<Time msg="The current time is "/>
+		<ToDoList msg="Hi Brian!">></ToDoList>
+		<!-- <Time msg="The current time is "/> -->
 </template>
 
 <script>
 import ToDoList from './components/ToDoList.vue'
-import Time from './components/Time.vue'
+// import Time from './components/Time.vue'
 
 export default {
   name: 'App',
   components: {
+	// Time,
 	ToDoList,
-	Time,
   }
 }
 </script>
