@@ -1,5 +1,5 @@
 <template>
-		<ToDoList msg="Hi Brian!">></ToDoList>
+		<ToDoList msg="Hi Brian :)">></ToDoList>
 		<!-- <Time msg="The current time is "/> -->
 </template>
 
